@@ -4,7 +4,7 @@ const { auth } = pkg;
 
 export default async (req, res, next) => {
   const token = req.headers.authorization?.split('Bearer ')[1];
-
+  //console.log('req -', req);
   if (!token) {
     return res.status(401).json({ message: 'No token provided.' });
   }
