@@ -1,0 +1,14 @@
+{
+  "type": "service_account",
+  "project_id": "futuristic-delivery-app",
+  "private_key_id": "086e272b71aa0b3cdda8f163ff52ce24a835e3dc",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC9WvCtJ0sxgv/w\nx2zwns7hprXRZusFH1/cSomwYWRhCSpteyvdgOQBEamLJ4yoaW0pVvc9vSxCkf4d\nNhj/E2LX+CqZOWBA2MvDYsbTO2yxyAroy3KYGcOmWJu4yLHRJg9CDuLib1p8XLVJ\n2gm1UWwdHHNzT7DWvRIVyP4eADKLV0kegQw+FKQykSowJWik8RT3k7Ce0gj9axvt\nnARd/+zsdVleZEJkFqvdeogTvqHzJ9LoB57WZbeLHi9l3BCnpXRdEiCU6nl6j7J1\noB72K09VNwugtzWD6zvyhWwe5e0lqW2KmXDPVmLcDeNA/u8vrC1uZ3IPw/TFxYUy\nzYMm2H1NAgMBAAECggEAWm3NtsOnM1P+aryymA8fecAl4IUoA+BB5XBrZSJ9z6GS\n84n5HuVo/eGzeFNA50TB7xYrKP7o3jneg5DMSzS05bMMlPRDtXRTi1Hm5gXhGN4R\n568RYPYc65oxdAPUd6+XZdK6I61OJ0oXAdfw/viNizGFKTKLn2HX+zNruGQbv1Ly\n35JutOtZiyTyYPdivrnKaFAberWfEx39BxYy4jv2ZaU5qNJwDP4Q58nCG/T/ppOi\n/N2aMDH9qQvpVt3eQACQpR0dnxxbNG5m+7kAGFHZCCvJ2j3T786TCUbgHHg7KBDR\nyU1+jiX7v2qnymYtkPqkQ4Qyhv47X9FBw2N3Blx6uQKBgQDw/CiMvSuVV/4sGGkC\nnqAHApQl3kcRwQPo5J/xZCCMYvwc19bxef2ogClMIItbEvPn40IF8eNuxA7RfaPE\n5PXD4OQUx5Ysf2ORTikOEeV0ZEkwihINvvRkLv+3o1l++y/+SLe7vF/VqQpxZJyt\nvF4UIClDrXLPzISalXf+8wkNQwKBgQDJJ0JQKpFatLMLIaa94yQCX8SzaeGBhx8r\niLA34M3JQNwQ6ZZ8e5eydGkedRB36CSHJMPWlWVc7FhsIgnknm2o4X4I9CpanjVH\nZnJnuusJPJDa/XSAqp9Msr0iRbmd2X+FdJE9O113UOXXeTuh9VLdj840UAWDrLzr\njuEN4UzaLwKBgG0nemKNSRGDYuCsSdxi509ljp88eGqFR/UUoZHgbZHJQDL8XSLR\nw+Cv9ITD9PtSsWHmoUA6GW9RpPik9So5H00TL5xt7wrGxN3LTnNODeXTiwdOcvEA\n/ofmdfPDLMWEl2+Rlo+Vur73q4BDN2jGesKY8rfx96BCHgo7C7hSc1YrAoGBALDi\nYv/XzuXyjJc3SkcknB+yU2hprTGXvqMrmbopZwyYimwc3IYusKDumRl9W7P1YVmt\nzMC/stjZxI+iBw0Q++FMGOaKv0vcX4Gf5u6sgc4ngkHwKyiR4W8ypfqjUawq/GZA\nsQ8lSvWHH/Yw121+KxZGRM/fplm55o9Fn0XzXv9lAoGBAKKiDfa5J/qWbP9kA7g9\nbQHYccyI3Id1SJEbh54FTJrAL8+4q+sndj7XuwOsBkEGyqyUUr48h7YGpU7eWOCQ\nMY7zuXG5+FSxE6yfoe7sqZSSQRld4MXlF49JG/DR5jSy+QfsSzf0FcQylWGFh5zd\nWbDkB4W5JQ2afVTnXxA5tLXK\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-z6la7@futuristic-delivery-app.iam.gserviceaccount.com",
+  "client_id": "117711713857930710492",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-z6la7%40futuristic-delivery-app.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com",  
+  "bucket": "futuristic-delivery-app.appspot.com"
+}
