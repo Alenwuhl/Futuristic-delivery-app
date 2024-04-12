@@ -67,7 +67,7 @@ passport.deserializeUser((id, done) => {
 passport.use(new TwitterStrategy({
   consumerKey: TWITTER_CONSUMER_KEY,
   consumerSecret: TWITTER_CONSUMER_SECRET,
-  callbackURL: "http://192.168.2.120:3000/auth/twitter/callback"
+  callbackURL: "https://futuristic-delivery-app-9z0i.onrender.com/auth/twitter/callback"
 },
 async function(token, tokenSecret, profile, done) {
   console.log("Token de Solicitud Recuperado:", token);
