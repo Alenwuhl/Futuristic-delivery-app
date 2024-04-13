@@ -11,7 +11,6 @@ const collectionRef = db.collection('categories');
 async function getAllCategories() {
   const snapshot = await collectionRef.get();
   const categories = [];
-  const protocol = 'http';
   const hostname = HOST 
 
   for (let doc of snapshot.docs) {
@@ -21,7 +20,7 @@ async function getAllCategories() {
     if (data.imageName) {
       try {
         const localImagePath = path.join('src', 'public', 'images', data.imageName);
-        data.imageUrl = `${protocol}://${hostname}/images/${data.imageName}`;
+        data.imageUrl = `${hostname}/images/${data.imageName}`;
 
         setTimeout(() => {
          downloadImage(`images/${data.imageName}`, localImagePath);

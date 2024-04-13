@@ -7,7 +7,6 @@ import dotenv from 'dotenv';
 dotenv.config();
 const HOST = process.env.HOST;
 
-const protocol = "http";
 const hostname = HOST;
 
 const collectionRef = db.collection("products");
@@ -37,7 +36,7 @@ async function getProductsByCategory(categoryId) {
         setTimeout(() => {
           downloadImage(`images/${productData.imageName}`, localImagePath);
         }, 5000);
-        imageUrl = `${protocol}://${hostname}/images/${productData.imageName}`;
+        imageUrl = `${hostname}/images/${productData.imageName}`;
       } catch (error) {
         console.error(
           `Error al obtener URL firmada para imagen ${productData.imageName}:`,
@@ -121,7 +120,7 @@ async function downloadExtraImage(imageName){
       setTimeout(() => {
         downloadImage(`images/${imageName}`, localImagePath);
       }, 5000);
-      imageUrl = `${protocol}://${hostname}/images/${imageName}`;
+      imageUrl = `${hostname}/images/${imageName}`;
     } catch (error) {
       console.error(
         `Error al obtener URL firmada para imagen ${imageName}:`,
