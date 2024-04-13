@@ -3,7 +3,7 @@ import { config as dotenvConfig } from 'dotenv';
 import { resolve } from 'path';
 import { __dirname } from '../utils.js';
 
-// Configure commander for environment selection
+// Configuration of commander for environment selection
 program
   .option('-e, --env <type>', 'Select environment', 'development')
   .parse(process.argv);

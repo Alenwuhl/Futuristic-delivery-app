@@ -7,14 +7,11 @@ const collectionRef = db.collection('extras');
 async function getExtraById(extraId) {
   try {
     const snapshot = await collectionRef.where('id', '==', extraId).get();
-    //console.log('extra id -', extraId);
-    //console.log('snapshot -', snapshot);
     let extra = new Extra();
 
     for (let doc of snapshot.docs) {
       const extraData = doc.data();
       extra = new Extra(extraId, extraData.title, extraData.imageName, extraData.price);
-      //console.log('extra - ', doc.data())
      }
 
      if (!extra) {

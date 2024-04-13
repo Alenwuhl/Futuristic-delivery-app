@@ -3,7 +3,6 @@ import * as productService from '../services/product.service.js';
 async function getProductsByCategory(req, res) {
     try {
       const { catId } = req.params;
-      console.log('CategoryId:', catId);
       if (!catId ) {
         return res.status(400).send('Missing categoryId');
       }

@@ -7,10 +7,7 @@ class OrderService {
     try {
       const orderNumber = getRandomSixDigitNumber();
       const createdAt = new Date()
-      console.log('0');
       const orderId = getRandomString(30); // Generates a random string for order ID.
-      console.log('orderId -', orderId);
-      console.log('1');
       const newOrder = new Order(
         userId,
         email,
@@ -19,9 +16,8 @@ class OrderService {
         createdAt,
         totalAmount
       );
-      console.log('OrderService newOrder -', newOrder);
       await db.collection("orders").doc(orderId).set(newOrder.toFirestore());
-      return orderId; // Returns the ID of the new order.
+      return orderId; 
     } catch (error) {
       console.error("OrderService Error creating new order:", error);
       throw new Error(error);
@@ -33,7 +29,6 @@ class OrderService {
       const ordersRef = db.collection("orders").where("userId", "==", userId);
       const snapshot = await ordersRef.get();
       if (snapshot.empty) {
-        console.log("No matching orders found.");
         return [];
       }
       let orders = [];
@@ -46,6 +41,7 @@ class OrderService {
       throw new Error(error);
     }
   }
+
   async getOrderById(orderId) {
     try {
       const orderSnapshot = await db.collection("orders").doc(orderId).get();

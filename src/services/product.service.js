@@ -7,25 +7,10 @@ import dotenv from 'dotenv';
 dotenv.config();
 const HOST = process.env.HOST;
 
-// Configura la dirección del servidor y el protocolo si es necesario
 const protocol = "http";
 const hostname = HOST;
-//const hostname = "192.168.68.105:3000";
 
 const collectionRef = db.collection("products");
-
-async function getSignedUrlForImage(filePath) {
-  const options = {
-    action: "read",
-    expires: Date.now() + 1000 * 60 * 60, // URL expira en 1 hora
-  };
-  try {
-    const [url] = bucket.file(filePath).getSignedUrl(options);
-    return url;
-  } catch (error) {
-    throw error;
-  }
-}
 
 async function getProductsByCategory(categoryId) {
   if (!categoryId) {
@@ -41,7 +26,6 @@ async function getProductsByCategory(categoryId) {
     const product = Product.fromFirestore(doc);
     let imageUrl = "";
 
-    // Aquí asumimos que tienes un campo 'imageName' en tus documentos de productos que contiene el nombre del archivo de imagen en Firebase Storage.
     if (productData.imageName) {
       try {
         const localImagePath = path.join(
@@ -59,7 +43,7 @@ async function getProductsByCategory(categoryId) {
           `Error al obtener URL firmada para imagen ${productData.imageName}:`,
           error
         );
-        imageUrl = ""; // O una URL de imagen predeterminada en caso de error.
+        imageUrl = ""; 
       }
     }
 
@@ -92,7 +76,6 @@ async function getProductById(productId) {
         productData.extrasIds
       );
     }
-    console.log(product);
 
     if (!product) {
       return null;
@@ -121,14 +104,12 @@ async function getProductExtras(productId) {
     extras.push(extra);
   }
 
-  console.log("extras - ", extras);
   return extras;
 }
 
 async function downloadExtraImage(imageName){
   let imageUrl = "";
 
-  // Aquí asumimos que tienes un campo 'imageName' en tus documentos de productos que contiene el nombre del archivo de imagen en Firebase Storage.
   if (imageName) {
     try {
       const localImagePath = path.join(
@@ -146,7 +127,7 @@ async function downloadExtraImage(imageName){
         `Error al obtener URL firmada para imagen ${imageName}:`,
         error
       );
-      imageUrl = ""; // O una URL de imagen predeterminada en caso de error.
+      imageUrl = "";
     }
   }
   return imageUrl

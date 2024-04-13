@@ -6,8 +6,9 @@ import fs from 'fs';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
+// Generates a 6-digit number.
 function getRandomSixDigitNumber() {
-    return Math.floor(100000 + Math.random() * 900000); // Generates a 6-digit number.
+    return Math.floor(100000 + Math.random() * 900000); 
   }
   
   function getRandomString(length) {
