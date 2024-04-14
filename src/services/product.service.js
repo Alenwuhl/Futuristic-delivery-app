@@ -5,9 +5,8 @@ import { downloadImage } from "../utils.js";
 import path from "path";
 import dotenv from 'dotenv';
 dotenv.config();
-const HOST = process.env.HOST;
 
-const hostname = HOST;
+const hostname = process.env.HOST;
 
 const collectionRef = db.collection("products");
 
@@ -36,10 +35,11 @@ async function getProductsByCategory(categoryId) {
         setTimeout(() => {
           downloadImage(`images/${productData.imageName}`, localImagePath);
         }, 5000);
+
         imageUrl = `${hostname}/images/${productData.imageName}`;
       } catch (error) {
         console.error(
-          `Error al obtener URL firmada para imagen ${productData.imageName}:`,
+          `Error on the image ${productData.imageName}:`,
           error
         );
         imageUrl = ""; 

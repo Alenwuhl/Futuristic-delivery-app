@@ -24,7 +24,7 @@ const EXPRESS_SESSION_SECRET = process.env.EXPRESS_SESSION_SECRET;
 const app = express();
 
 // Middleware to Cors
-app.use(cors());
+app.use(cors({origin: 'https://futuristic-delivery-app.firebaseapp.com'}));
 
 // Middleware to parse JSON
 app.use(express.json());
