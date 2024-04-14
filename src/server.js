@@ -11,7 +11,7 @@ import categoryRouter from './routes/category.route.js';
 import extraRouter from './routes/extra.route.js';
 import orderRouter from './routes/order.route.js';
 import productRouter from './routes/product.route.js';
-import userService from  './services/user.service.js';
+import twitterRouter from './routes/auth.twitter.js';
 
 dotenv.config();
 
@@ -28,58 +28,6 @@ app.use(cors());
 
 // Middleware to parse JSON
 app.use(express.json());
-
-// express-session configuration
-app.use(session({
-  secret: EXPRESS_SESSION_SECRET, 
-  resave: false,  
-  saveUninitialized: false, 
-  cookie: { secure: false } 
-}));
-
-// Passport initialization
-app.use(passport.initialize());
-app.use(passport.session());
-
-// User serialization and deserialization
-passport.serializeUser((user, done) => {
-  done(null, user.id);
-});
-
-passport.deserializeUser((id, done) => {
-  User.findById(id, (err, user) => {
-    done(err, user);
-  });
-});
-
-// Twitter strategy configuration
-passport.use(new TwitterStrategy({
-  consumerKey: TWITTER_CONSUMER_KEY,
-  consumerSecret: TWITTER_CONSUMER_SECRET,
-  callbackURL: "https://futuristic-delivery-app-9z0i.onrender.com/auth/twitter/callback"
-},
-async function(token, tokenSecret, profile, done) {
-  try {
-    const user = await userService.findOrCreateUser(profile.id, profile);
-    done(null, user);
-  } catch (error) {
-    console.error('Error during authentication', error);
-    done(error);
-  }
-}
-));
-
-
-// Twiter's route
-app.get('/auth/twitter', passport.authenticate('twitter'));
-
-// Twitter's callback
-app.get('/auth/twitter/callback', 
-  passport.authenticate('twitter', { failureRedirect: '/login' }),
-  (req, res) => {
-    res.redirect('/api/categories');
-  }
-);
 
 // Routes
 app.use('/api/categories', categoryRouter);
